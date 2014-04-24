@@ -1,23 +1,34 @@
 package org.teamfulp.fulp.app.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.json.JSONObject;
 import org.teamfulp.fulp.app.R;
+import org.teamfulp.fulp.app.domain.Account;
 import org.teamfulp.fulp.app.domain.User;
 import org.teamfulp.fulp.app.fragments.AddIncomeFragment;
 import org.teamfulp.fulp.app.fragments.AddInsuranceFragment;
@@ -26,9 +37,15 @@ import org.teamfulp.fulp.app.fragments.DashboardFragment;
 import org.teamfulp.fulp.app.fragments.SummaryIncomeFragment;
 import org.teamfulp.fulp.app.fragments.SummaryInsuranceFragment;
 import org.teamfulp.fulp.app.fragments.SummarySubscriptionFragment;
+import org.teamfulp.fulp.app.listeners.DateClickListener;
+import org.teamfulp.fulp.app.listeners.WebserviceListener;
+import org.teamfulp.fulp.app.tasks.user.UserSwitchAccountTask;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements WebserviceListener {
 	
 	private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -78,9 +95,50 @@ public class MainActivity extends Activity {
         Intent i = getIntent();
         user = (User)i.getSerializableExtra("user");
 
+        if(user != null) {
+            ((TextView)findViewById(R.id.label_current_user)).setText(user.getName());
+            ((TextView)findViewById(R.id.label_current_account)).setText(user.getCurrentAccount().getName());
+        }
 
-       ((TextView)findViewById(R.id.label_current_user)).setText(user.getName());
+        final MainActivity a = this;
 
+
+        final TextView switchUserLabel = (TextView)findViewById(R.id.label_switch_user);
+        switchUserLabel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder b = new AlertDialog.Builder(a);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(a);
+                builder.setTitle("Wissel van account");
+                final ArrayAdapter<Account> arrayAdapter = new ArrayAdapter<Account>(a, android.R.layout.select_dialog_singlechoice);
+
+                List<Account> accounts = user.getAccounts();
+
+                for(Account a : accounts) {
+                    arrayAdapter.add(a);
+                }
+
+                builder.setAdapter(arrayAdapter,
+                        new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Account selectedAccount = arrayAdapter.getItem(which);
+
+                                Toast.makeText(a.getApplicationContext(), String.valueOf(selectedAccount.getId()), Toast.LENGTH_LONG).show();
+
+                                a.getUser().setCurrentAccount(selectedAccount);
+
+                                UserSwitchAccountTask userSwitchAccountTask = new UserSwitchAccountTask(a, a.getUser());
+                                userSwitchAccountTask.execute();
+                            }
+                        });
+                builder.show();
+
+
+            }
+        });
 
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,                  /* host Activity */
@@ -226,6 +284,16 @@ public class MainActivity extends Activity {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggls
         mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public void onComplete(List<?> data) {
+
+    }
+
+    @Override
+    public void onFailure(String msg) {
+
     }
 
 
