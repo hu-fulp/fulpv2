@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
         Intent i = getIntent();
         user = (User)i.getSerializableExtra("user");
 
-
+        if(user!= null)
        ((TextView)findViewById(R.id.label_current_user)).setText(user.getName());
 
 

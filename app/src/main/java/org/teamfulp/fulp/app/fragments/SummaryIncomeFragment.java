@@ -11,10 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import org.teamfulp.fulp.app.R;
 import org.teamfulp.fulp.app.activities.MainActivity;
+import org.teamfulp.fulp.app.adapters.IncomeAdapter;
 import org.teamfulp.fulp.app.domain.Income;
 import org.teamfulp.fulp.app.listeners.WebserviceListener;
 import org.teamfulp.fulp.app.tasks.income.ListIncomeTask;
@@ -72,10 +74,13 @@ public class SummaryIncomeFragment extends Fragment implements WebserviceListene
 
     @Override
     public void onComplete(List<?> data) {
-        
-
-
-        Toast.makeText(getActivity(), ((Income)data.get(0)).getName(), Toast.LENGTH_LONG).show();
+        Income[] incomes = new Income[data.size()];
+        for(int i = 0; i < data.size(); i++){
+            Income income = (Income) data.get(i);
+            incomes[i] = income;
+        }
+        ListView list = (ListView)mRootView.findViewById(R.id.summary_list);
+        list.setAdapter(new IncomeAdapter(getActivity(), R.layout.summary_list_item, incomes));
     }
 
     @Override
