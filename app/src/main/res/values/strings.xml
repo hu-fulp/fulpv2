@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fulp</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="nav_drawer_items">
+        <item>Dashboard</item>
+        <item>Inkomsten</item>
+        <item>Verzekeringen</item>
+        <item>Abonnementen</item>
+        <item>Geldzaken</item>
+        <item>Instellingen</item>
+    </string-array>
+    <string-array name="income_types">
+        <item>Toeslagen</item>
+        <item>Inkomen</item>
+        <item>Uitkering</item>
+    </string-array>
+    <string-array name="intervals">
+        <item>Geen</item>
+        <item>Wekelijks</item>
+        <item>Twee wekelijks</item>
+        <item>Maandelijks</item>
+        <item>Kwartaal</item>
+        <item>Jaarlijks</item>
+    </string-array>
+    <string-array name="subscription_categories">
+        <item>Internet</item>
+        <item>Telefoon</item>
+        <item>Diversen</item>
+    </string-array>
+
+    <string-array name="insurance_categories">
+        <item>Autoverzekering</item>
+        <item>Zorgverzekering</item>
+        <item>Levensverzekering</item>
+        <item>Inboedelverzekering</item>
+    </string-array>
+
+    <string name="title_activity_main">Home</string>
+    <string name="drawer_open">Toon navigatie</string>
+    <string name="drawer_close">Sluit navigatie</string>
+    <string name="action_websearch">Web zoekopdracht</string>
+    <string name="app_not_available">App niet beschikbaar</string>
+    <string name="add_income_title">Inkomstenbron toevoegen</string>
+    <string name="add_income_description_label">Omschrijving</string>
+    <string name="add_income_description">Bijv. salaris</string>
+    <string name="add_income_amount_label">Bedrag</string>
+    <string name="add_income_amount">Voer een bedrag in euro\'s in</string>
+    <string name="add_income_incometype_label">Inkomstentype</string>
+    <string name="add_income_interval_label">Periodieke herhaling</string>
+    <string name="add_income_startdate_label">Startdatum</string>
+    <string name="add_income_startdate">Klik om een startdatum te selecteren</string>
+    <string name="add_income_enddate_label">Einddatum</string>
+    <string name="add_income_enddate">Klik om een einddatum te selecteren</string>
+    <string name="add_insurance_title">Verzekering toevoegen</string>
+    <string name="add_insurance_insurer_label">Verzekeraar</string>
+    <string name="add_insurance_insurer">Bijv. Ohra</string>
+    <string name="add_insurance_category_label">Verzekeringstype</string>
+    <string name="add_insurance_interval_label">Periodieke herhaling</string>
+    <string name="add_insurance_premium_label">Premie</string>
+    <string name="add_insurance_premium">Voer de premie in euro\'s in</string>
+    <string name="add_insurance_startdate_label">Startdatum</string>
+    <string name="add_insurance_startdate">Klik om een startdatum te selecteren</string>
+    <string name="add_insurance_enddate_label">Einddatum</string>
+    <string name="add_insurance_enddate">Klik om een einddatum te selecteren</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="add_subscription_title">Abonnement toevoegen</string>
+    <string name="add_subscription_name_label">Naam</string>
+    <string name="add_subscription_name">Bijv. KPN alles in één</string>
+    <string name="add_subscription_category_label">Categorie</string>
+    <string name="add_subscription_interval_label">Periodieke herhaling</string>
+    <string name="add_subscription_amount_label">Bedrag</string>
+    <string name="add_subscription_amount">Voer het bedrag in euro\'s in</string>
+    <string name="add_subscription_startdate_label">Startdatum</string>
+    <string name="add_subscription_startdate">Klik om een startdatum te selecteren</string>
+    <string name="add_subscription_enddate_label">Einddatum</string>
+    <string name="add_subscription_enddate">Klik om een einddatum te selecteren</string>
+    <string name="button_save">Opslaan</string>
+
+    <string name="button_new">Nieuw</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

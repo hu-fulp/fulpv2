@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_subscription_name_label"
+        android:id="@+id/add_subscription_name_label"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_subscription_name"
+        android:layout_below="@+id/add_subscription_name_label"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:hint="@string/add_subscription_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_subscription_category_label"
+        android:id="@+id/add_subscription_category_label"
+        android:layout_below="@+id/add_subscription_name"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:id="@+id/add_subscription_category_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_subscription_category_label"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_subscription_interval_label"
+        android:id="@+id/add_subscription_interval_label"
+        android:layout_below="@+id/add_subscription_category_spinner"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:id="@+id/add_subscription_interval_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_subscription_interval_label"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_subscription_amount_label"
+        android:id="@+id/add_subscription_amount_label"
+        android:layout_below="@+id/add_subscription_interval_spinner"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_subscription_amount"
+        android:layout_below="@+id/add_subscription_amount_label"
+        android:layout_marginTop="5dp"
+        android:hint="@string/add_subscription_amount"
+        android:inputType="numberDecimal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_subscription_startdate_label"
+        android:id="@+id/add_subscription_startdate_label"
+        android:layout_below="@+id/add_subscription_amount"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="selectDatum" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_subscription_startdate"
+        android:layout_below="@+id/add_subscription_startdate_label"
+        android:layout_marginTop="5dp"
+        android:hint="@string/add_subscription_startdate"
+        android:inputType="none"
+        android:editable="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="selectDatum" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_subscription_enddate_label"
+        android:id="@+id/add_subscription_enddate_label"
+        android:layout_below="@+id/add_subscription_startdate"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_subscription_enddate"
+        android:layout_below="@+id/add_subscription_enddate_label"
+        android:layout_marginTop="5dp"
+        android:inputType="none"
+        android:editable="false"
+        android:hint="@string/add_subscription_enddate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="selectDatum"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_save"
+        android:id="@+id/add_subscription_save"
+        android:layout_below="@+id/add_subscription_enddate"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

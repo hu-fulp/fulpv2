@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+   	android:paddingLeft="20dp"
+   	android:paddingRight="20dp"
+   	android:paddingTop="20dp">
+	
+    <TextView
+        android:id="@+id/add_income_description_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_income_description_label" />
+    
+    <EditText
+        android:id="@+id/add_income_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_description_label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:inputType="text"
+        android:hint="@string/add_income_description"
+        android:nextFocusDown="@+id/add_income_amount">
+        <requestFocus />
+    </EditText>
+	
+    <TextView
+        android:id="@+id/add_income_amount_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_description"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_income_amount_label" />
+    
+    <EditText
+        android:id="@+id/add_income_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_amount_label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:inputType="numberDecimal"
+        android:hint="@string/add_income_amount" />
+	
+    <TextView
+        android:id="@+id/add_income_type_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_amount"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_income_incometype_label" />
+    
+    <Spinner
+        android:id="@+id/add_income_type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_type_label"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/add_income_interval_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_type_spinner"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_income_interval_label" />
+	
+    <Spinner
+        android:id="@+id/add_income_interval_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_interval_label"
+        android:layout_marginTop="5dp"
+        />
+    
+    <TextView
+        android:id="@+id/add_income_startdate_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_interval_spinner"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_income_startdate_label" />
+    
+    <EditText
+        android:id="@+id/add_income_startdate_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_startdate_label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:inputType="none"
+        android:editable="false"
+        android:hint="@string/add_income_startdate" />
+    
+    <TextView
+        android:id="@+id/add_income_enddate_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_startdate_edit"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_income_enddate_label" />
+    
+    <EditText
+        android:id="@+id/add_income_enddate_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_income_enddate_label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:inputType="none"
+        android:editable="false"
+        android:hint="@string/add_income_enddate" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_save"
+        android:id="@+id/income_save_button"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/add_income_enddate_edit"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

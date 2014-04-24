@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/list_selector"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/summary_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIM ONLY"
+            android:textSize="20dip"
+            android:textStyle="bold"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:id="@+id/summary_item_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="€19,55"
+            android:textSize="20dip"
+            android:textStyle="bold"
+            android:paddingBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="30dp" />
+
+        <TextView
+            android:id="@+id/summary_item_title2"
+            android:text="T-MOBILE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/summary_item_title"
+            android:textSize="15dip"
+            android:textColor="#848484"
+            android:paddingBottom="0dp" />
+
+        <TextView
+            android:id="@+id/summary_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/summary_item_amount"
+            android:text="1 jan '14 - 1 jan '15"
+            android:textSize="15dip"
+            android:textColor="#848484"
+            android:paddingBottom="0dp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="30dp" />
+
+    <ImageView
+        android:layout_width="11dp"
+        android:layout_height="12dp"
+        android:src="@drawable/arrow"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

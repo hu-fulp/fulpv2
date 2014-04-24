@@ -1,0 +1,50 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<color name="fulpWindowBackgroundColor">#F7F7F7</color>
+	<color name="fulpButtonTextColor">#FFFFFF</color>
+	<color name="fulpTextColor">#EC6B0A</color>
+	<color name="drawerSelectedColor">#434542</color>
+	
+    <style name="fulpTheme" parent="@android:style/Theme.Holo.Light">
+        <!--<item name="android:background">@color/fulpWindowBackgroundColor</item>  conflicts with color of action bar-->
+        <item name="android:buttonStyle">@style/fulpButton</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:actionBarStyle">@style/fulpActionBar</item>
+        <item name="android:editTextStyle">@style/fulpEdit</item>
+        <item name="android:textViewStyle">@style/fulpTextView</item>
+    </style>
+    
+    <style name="fulpEdit" parent="@android:style/Widget.Holo.Light.EditText">
+       <item name="android:background">@drawable/edittext</item>
+       <item name="android:padding">7dp</item>
+       <item name="android:paddingTop">2dp</item>
+       <item name="android:paddingBottom">2dp</item>
+       <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="fulpTextView" parent="@android:style/Widget.Holo.Light.TextView">
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="fulpActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/title_gradient</item>
+        <item name="android:backgroundStacked">@drawable/title_gradient</item>
+        <item name="android:backgroundSplit">@drawable/title_gradient</item>
+        <item name="android:titleTextStyle">@style/fulpActionBarTitleTextStyle</item>
+    </style>
+    
+    <style name="fulpActionBarTitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+   	
+    <style name="fulpButton" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/button_gradient</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:fontFamily">"arial"</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/fulpButtonTextColor</item>
+    </style>
+
+</resources>

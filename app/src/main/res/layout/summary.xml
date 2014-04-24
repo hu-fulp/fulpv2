@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/summary_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inkomsten (6)"
+        android:textSize="25dp"
+        android:textColor="#FFEC6D0D"
+        android:layout_marginBottom="20dp" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:choiceMode="none"
+        android:divider="#d3d3d3"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector"
+        android:layout_below="@+id/summary_title"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false" />
+
+</RelativeLayout>
