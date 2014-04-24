@@ -42,13 +42,24 @@ public class UserLoginTask extends WebserviceRequestTask {
             user.setToken(auth.getString("token"));
             user.setId(auth.getInt("user_id"));
 
+            JSONObject userObject = json.getJSONObject("user");
+            user.setName(userObject.getString("name"));
+
+            JSONObject currentAccountObject = json.getJSONObject("current_account");
+            Account account = new Account();
+            account.setId(currentAccountObject.getInt("id"));
+            account.setName(currentAccountObject.getString("name"));
+            account.setUser(user);
+
+            user.setCurrentAccount(account);
+
 
             JSONArray accounts = json.getJSONArray("Account");
 
             for(int i = 0; i < accounts.length(); i++) {
                 JSONObject o =  accounts.getJSONObject(i);
 
-                Account account = new Account();
+                account = new Account();
                 account.setId(o.getInt("id"));
                 account.setName(o.getString("name"));
 

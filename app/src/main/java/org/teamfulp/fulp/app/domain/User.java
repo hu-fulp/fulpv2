@@ -16,6 +16,7 @@ public class User implements Serializable {
     private String name;
     private String androidId;
     private List<Account> accounts;
+    private Account currentAccount;
     private int id;
     private String token;
 
@@ -23,6 +24,7 @@ public class User implements Serializable {
         this.accounts = new ArrayList<Account>();
         this.setAndroidId(Build.MODEL);
     }
+
 
     public String getPassword() {
         return password;
@@ -56,7 +58,7 @@ public class User implements Serializable {
         this.androidId = androidId;
     }
 
-    public List<Account> getAccount() {
+    public List<Account> getAccounts() {
         return accounts;
     }
 
@@ -78,5 +80,13 @@ public class User implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Account getCurrentAccount() {
+        return currentAccount;
+    }
+
+    public void setCurrentAccount(Account currentAccount) {
+        this.currentAccount = currentAccount;
     }
 }

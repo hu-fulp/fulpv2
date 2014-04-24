@@ -74,7 +74,7 @@ public class LoginActivity extends Activity implements WebserviceListener{
     public void onComplete(List<?> data) {
         if(pDialog != null)  pDialog.dismiss();
 
-        Toast.makeText(this, "Welkom12 "  + user.getName(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Welkom "  + user.getName(), Toast.LENGTH_LONG).show();
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("user", user);
         startActivity(i);
