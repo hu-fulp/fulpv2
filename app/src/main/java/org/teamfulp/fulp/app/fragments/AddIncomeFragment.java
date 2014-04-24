@@ -15,7 +15,9 @@ import android.widget.Toast;
 
 
 import org.teamfulp.fulp.app.R;
+import org.teamfulp.fulp.app.activities.MainActivity;
 import org.teamfulp.fulp.app.domain.Income;
+import org.teamfulp.fulp.app.helpers.LoginSession;
 import org.teamfulp.fulp.app.listeners.DateClickListener;
 import org.teamfulp.fulp.app.listeners.WebserviceListener;
 import org.teamfulp.fulp.app.tasks.WebserviceRequestTask;
@@ -62,7 +64,7 @@ public class AddIncomeFragment extends Fragment implements OnItemSelectedListene
                 // Perform action on click
                 Income income = createIncome();
                 if(income != null){
-                    WebserviceRequestTask createIncomeTask = new CreateIncomeTask(webserviceListener, income);
+                    WebserviceRequestTask createIncomeTask = new CreateIncomeTask(webserviceListener, income, LoginSession.getInstance().getUser());
                     createIncomeTask.execute();
                 }
             }

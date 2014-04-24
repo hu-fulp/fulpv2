@@ -26,6 +26,7 @@ import org.teamfulp.fulp.app.fragments.DashboardFragment;
 import org.teamfulp.fulp.app.fragments.SummaryIncomeFragment;
 import org.teamfulp.fulp.app.fragments.SummaryInsuranceFragment;
 import org.teamfulp.fulp.app.fragments.SummarySubscriptionFragment;
+import org.teamfulp.fulp.app.helpers.LoginSession;
 
 
 public class MainActivity extends Activity {
@@ -76,7 +77,7 @@ public class MainActivity extends Activity {
 
 
         Intent i = getIntent();
-        user = (User)i.getSerializableExtra("user");
+        user = LoginSession.getInstance().getUser();
 
         if(user!= null)
        ((TextView)findViewById(R.id.label_current_user)).setText(user.getName());

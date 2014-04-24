@@ -3,6 +3,7 @@ package org.teamfulp.fulp.app.tasks.income;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.teamfulp.fulp.app.domain.Income;
+import org.teamfulp.fulp.app.domain.User;
 import org.teamfulp.fulp.app.listeners.WebserviceListener;
 import org.teamfulp.fulp.app.tasks.WebserviceRequestTask;
 
@@ -17,8 +18,8 @@ public class CreateIncomeTask extends WebserviceRequestTask {
 
     private final WebserviceListener listener;
 
-    public CreateIncomeTask(WebserviceListener listener, Income income) {
-        super("Income/create");
+    public CreateIncomeTask(WebserviceListener listener, Income income, User user) {
+        super("Income/create", user.getToken(), String.valueOf(user.getId()));
         this.listener = listener;
 
         parameters.put("name", income.getName());

@@ -78,7 +78,7 @@
     <string name="add_subscription_enddate_label">Einddatum</string>
     <string name="add_subscription_enddate">Klik om een einddatum te selecteren</string>
     <string name="button_save">Opslaan</string>
-
+    <string name="income_summary_title">Inkomsten</string>
     <string name="button_new">Nieuw</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="hello_world">Hello world!</string>
