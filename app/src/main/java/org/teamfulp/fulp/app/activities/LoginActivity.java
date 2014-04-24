@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import org.teamfulp.fulp.app.R;
 import org.teamfulp.fulp.app.domain.User;
+import org.teamfulp.fulp.app.helpers.LoginSession;
 import org.teamfulp.fulp.app.listeners.WebserviceListener;
 import org.teamfulp.fulp.app.tasks.WebserviceRequestTask;
 import org.teamfulp.fulp.app.tasks.user.UserLoginTask;
@@ -76,7 +77,7 @@ public class LoginActivity extends Activity implements WebserviceListener{
 
         Toast.makeText(this, "Welkom "  + user.getName(), Toast.LENGTH_LONG).show();
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("user", user);
+        LoginSession.getInstance().setUser(user);
         startActivity(i);
 
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);

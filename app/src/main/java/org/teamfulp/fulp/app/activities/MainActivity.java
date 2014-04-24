@@ -37,9 +37,13 @@ import org.teamfulp.fulp.app.fragments.DashboardFragment;
 import org.teamfulp.fulp.app.fragments.SummaryIncomeFragment;
 import org.teamfulp.fulp.app.fragments.SummaryInsuranceFragment;
 import org.teamfulp.fulp.app.fragments.SummarySubscriptionFragment;
+<<<<<<< HEAD
 import org.teamfulp.fulp.app.listeners.DateClickListener;
 import org.teamfulp.fulp.app.listeners.WebserviceListener;
 import org.teamfulp.fulp.app.tasks.user.UserSwitchAccountTask;
+=======
+import org.teamfulp.fulp.app.helpers.LoginSession;
+>>>>>>> ceb2d9b3ffe80ff651fe6cf52725408d16a2a532
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,6 +97,7 @@ public class MainActivity extends Activity implements WebserviceListener {
 
 
         Intent i = getIntent();
+<<<<<<< HEAD
         user = (User)i.getSerializableExtra("user");
 
         if(user != null) {
@@ -129,6 +134,12 @@ public class MainActivity extends Activity implements WebserviceListener {
                                 Toast.makeText(a.getApplicationContext(), String.valueOf(selectedAccount.getId()), Toast.LENGTH_LONG).show();
 
                                 a.getUser().setCurrentAccount(selectedAccount);
+=======
+        user = LoginSession.getInstance().getUser();
+
+        if(user!= null)
+       ((TextView)findViewById(R.id.label_current_user)).setText(user.getName());
+>>>>>>> ceb2d9b3ffe80ff651fe6cf52725408d16a2a532
 
                                 UserSwitchAccountTask userSwitchAccountTask = new UserSwitchAccountTask(a, a.getUser());
                                 userSwitchAccountTask.execute();

@@ -11,10 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.teamfulp.fulp.app.R;
 import org.teamfulp.fulp.app.activities.MainActivity;
+import org.teamfulp.fulp.app.adapters.IncomeAdapter;
 import org.teamfulp.fulp.app.domain.Income;
 import org.teamfulp.fulp.app.listeners.WebserviceListener;
 import org.teamfulp.fulp.app.tasks.income.ListIncomeTask;
@@ -23,6 +26,7 @@ import java.util.List;
 
 public class SummaryIncomeFragment extends Fragment implements WebserviceListener {
     private View mRootView;
+    private TextView title;
 
     public SummaryIncomeFragment() {
         // Empty constructor required for fragment subclasses
@@ -45,7 +49,8 @@ public class SummaryIncomeFragment extends Fragment implements WebserviceListene
 
         getActivity().setTitle("Inkomen overzicht");
         setHasOptionsMenu(true);
-
+        title = (TextView)mRootView.findViewById(R.id.summary_title);
+        title.setText(getString(R.string.income_summary_title));
         return mRootView;
     }
 
@@ -72,10 +77,14 @@ public class SummaryIncomeFragment extends Fragment implements WebserviceListene
 
     @Override
     public void onComplete(List<?> data) {
-        
-
-
-        Toast.makeText(getActivity(), ((Income)data.get(0)).getName(), Toast.LENGTH_LONG).show();
+        Income[] incomes = new Income[data.size()];
+        for(int i = 0; i < data.size(); i++){
+            Income income = (Income) data.get(i);
+            incomes[i] = income;
+        }
+        title.setText(getString(R.string.income_summary_title) + "("+ data.size() +")");
+        ListView list = (ListView)mRootView.findViewById(R.id.summary_list);
+        list.setAdapter(new IncomeAdapter(getActivity(), R.layout.summary_list_item, incomes));
     }
 
     @Override
